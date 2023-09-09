@@ -2,7 +2,7 @@
 
 ## Live hosted link
 
-In the project directory, you can run:
+https://video-clone-by-sonu.netlify.app/
 
 ## Install all dependancies
 npm install
