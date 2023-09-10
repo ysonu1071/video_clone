@@ -55,10 +55,12 @@ function VideoPage() {
         return response.json();
       })
       .then((result) => {
+        console.log(result.data.posts)
         setMovies(result.data.posts);
         setIsLoading(false);
       })
   }, [activePage])
+
 
   return (
     <div>
@@ -66,7 +68,7 @@ function VideoPage() {
 
       {!isLoading ? <main className='w-full bg-gray-100 min-h-[90vh]'>
         <div className='w-full flex justify-center gap-3 flex-wrap  pt-3 md:px-20'>
-          {movies.length > 0 ? movies.map((movie, index) => <MovieCard key={movie.postId} postId={movie.postId} submission={movie.submission} index={index} handlePlayPause={handlePlayPause} />) : null}
+          {movies.length > 0 ? movies.map((movie, index) => <MovieCard key={movie.postId} postId={movie.postId} submission={movie.submission} creator={movie.creator} reaction={movie.reaction} comment={movie.comment} index={index} handlePlayPause={handlePlayPause} />) : null}
         </div>
 
         <div className='flex justify-center py-12'>
